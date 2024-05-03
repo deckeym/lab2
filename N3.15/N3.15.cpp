@@ -4,12 +4,16 @@ using namespace std;
 
 bool ReglamentCheck(int num)
 {
+    if ( num / 10 == 0)
+    {
+        return false;
+    }
     int PrevDigit = num % 10;
     num = num / 10;
     while (num != 0)
     {
         int CurrentDigit = num % 10;
-        if (CurrentDigit <= PrevDigit) // Изменено условие
+        if (CurrentDigit < PrevDigit) // Изменено условие
         {
             PrevDigit = CurrentDigit;
             num /= 10;
